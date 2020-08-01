@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Vue学习</title>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/**
+			 * 时间：2020年7月9日08:17:52
+			 * 名称：
+			 * 内容：
+			 * 		v-on 补充 ：可绑定事件 keyup,click,dblclic等
+			 * 		@keyup.enter 绑定松开发车时间
+			 */
+		</script>
+	</head>
+	<body>
+		<div id="app">
+			<input type="button" value="点我" @click="func('老铁','666')"/>
+			<input type="input" value="点我" @keyup.enter="func('老铁','666')"/>
+		</div>
+		
+		<script type="text/javascript">
+			var app = new Vue({
+				el:"#app",
+				data:{
+					
+				},
+				methods:{
+					func:function(p1,p2){
+						alert(p1+p2);
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

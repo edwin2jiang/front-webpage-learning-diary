@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Vue学习</title>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/**
+			 * 时间：2020年7月8日23:39:09
+			 * 名称：
+			 * 内容：图片切换的逻辑实现
+			 * 		
+			 */
+		</script>
+	</head>
+	<body>
+		<div id="app">
+			<button type="button" @click="prev" v-show="index>=0">上一张</button>
+			<img :src="imgArr[index]">
+			<button type="button" @click="after" v-show="index<imgArr.length-1">下一张</button>
+		</div>
+		
+		<script type="text/javascript">
+			var app = new Vue({
+				el:"#app",
+				data:{
+					imgArr:["../img/日出.ico","../img/萌1.jpg"],
+					index:0
+				},
+				methods:{
+					prev:function(){
+						this.index--;
+					},
+					after:function(){
+						this.index++;
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

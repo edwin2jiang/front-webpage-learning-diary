@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Vue学习</title>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/**
+			 * 时间：2020年7月30日20:14:26
+			 * 名称：
+			 * 内容：
+			 * 		结构 
+			 * 			必不可少
+			 * 			template (必须要放在一个根节点下) 
+			 * 			和 data (必须是一个函数 return 一个对象) 
+			 * 		Vue.componet('按钮名',{
+						data:function(){
+							return {
+								
+							}
+						},
+						template:"放在一个根节点下"
+					})
+			 */
+		</script>
+	</head>
+	<body>
+		<div id="app">
+			<my-button></my-button>
+			<my-button></my-button>
+		</div>
+		
+		<script type="text/javascript">
+			Vue.component('my-button',{
+				data:function() {
+					return {
+						count:0
+					}
+				},
+				template:"<button @click='count++'>you click me {{count}} times!</button>"
+			})
+			
+			var app = new Vue({
+				el:"#app",
+				data:{
+					
+				},
+				methods:{
+				
+				}
+			})
+		</script>
+	</body>
+</html>

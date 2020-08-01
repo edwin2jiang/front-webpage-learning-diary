@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Vue学习</title>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/**
+			 * 时间：2020年7月8日23:12:27
+			 * 名称：
+			 * 内容：
+			 *      @click = func 绑定函数 对插入元素 不生效
+			 * 		
+			 */
+		</script>
+		<style>
+			.test{
+				border: 1px red solid;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<button type='button' @click='func'>点我</button>
+			<span v-html="html"></span>
+		</div>
+		
+		<script type="text/javascript">
+			var app = new Vue({
+				el:"#app",
+				data:{
+					imgUrl:"../img/日出.ico",
+					imgTitle:"日出",
+					isActive:false,
+					html:"<button type='button' @click='func'>点我</button>"
+				},
+				methods:{
+					func:function(){
+						alert("ok")
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

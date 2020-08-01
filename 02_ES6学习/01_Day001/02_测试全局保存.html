@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+
+		<script src="jq.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+
+
+	</head>
+	<body>
+		<div id="app">
+			<button type="button" @click="getData()">点我</button>
+			
+			<button type="button" @click="log()">按钮2</button>
+		</div>
+
+		<script type="text/javascript">
+			"use strict";
+
+
+
+			var app = new Vue({
+				el: "#app",
+				data: {
+					local: {
+						name:"test"
+					}
+				},
+				methods: {
+					getData() {
+						$.ajax({
+								"url": "https://dcdn-jiazheng.21cs.cn/allType",
+								"method": "GET",
+								"headers": {
+									"Content-Type": "application/x-www-form-urlencoded",
+									"Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMjM0NTY3OCIsImlzcyI6ImVjaGlzYW4iLCJleHAiOjE1OTY1MTMxOTAsImlhdCI6MTU5NTkwODM5MCwicm9sIjoidHlwZTpsaXN0LHR5cGU6Y3JlYXRlLHR5cGU6bW9kaWZ5LHR5cGU6ZGVsZXRlLG9yZGVyOmxpc3Qsb3JkZXI6bW9kaWZ5LG9yZGVyOmRlbGV0ZSxvcmRlcjpyZWZ1bmQsY291cG9uOmxpc3QsY291cG9uOmNyZWF0ZSxjb3Vwb246bW9kaWZ5LGNvdXBvbjpkZWxldGUsc2Vja2lsbDpsaXN0LHNlY2tpbGw6Y3JlYXRlLHNlY2tpbGw6bW9kaWZ5LHNlY2tpbGw6ZGVsZXRlLGhvbWU6bGlzdCxob21lOmNyZWF0ZSxob21lOm1vZGlmeSxob21lOmRlbGV0ZSxhZG1pbjpsaXN0LGFkbWluOmNyZWF0ZSxhZG1pbjptb2RpZnksYWRtaW46ZGVsZXRlLGNvbXBhbnk6bGlzdCxjb21wYW55Om1vZGlmeSxjb21wYW55OmRlbGV0ZSxjb21wYW55OmNyZWF0ZSxjdXN0b21lcjpsaXN0LGN1c3RvbWVyOm1vZGlmeSxhZG1pbiJ9.p1Lti2pZow6S0gR3WULZE6KOFmynOj_Byv6OVEKYy3OoL5a_OE-5XTakqkDHDbap0MI7Xuw0uFzIZFaCa7l6vQ"
+								},
+								"crossDomain": true
+							})
+							.done(function(response) {
+									
+								this.local = response.data;
+									
+								console.log(this.local);
+							})
+							.fail(function(jqXHR) {})
+					},
+					
+					log(){
+						console.log(this.local);
+					}
+				}
+			})
+			
+			
+			// let obj = {};
+			// obj.name = "jww";
+			// console.log(obj);
+			
+		</script>
+	</body>
+</html>

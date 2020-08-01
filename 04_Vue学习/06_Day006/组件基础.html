@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Vue学习</title>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/**
+			 * 时间：2020年7月30日09:44:48
+			 * 名称：
+			 * 内容：
+			 * 		组件的data必须是一个函数
+			 * 		 						- 如果 Vue 没有这条规则，点击一个按钮就可能会像如下代码一样影响到其它所有实例：
+			 * 		组件必须在new Vue 之前申明
+			 * 		组件有new Vue 里面的全部属性 除了绑定元素用的 el
+			 */
+		</script>
+	</head>
+	<body>
+		<div id="app">
+			<button-counter></button-counter>
+			<button-counter></button-counter>
+		</div>
+
+
+
+		<script type="text/javascript">
+			Vue.component('button-counter', {
+				data: function() {
+					return {
+						count: 0
+					}
+				},
+				template: '<button v-on:click="doIt()">You clicked me {{ count }} times.</button>',
+				methods:{
+					doIt(){
+						this.count++;
+						console.log(this.count);
+					}
+				}
+			});
+			var app = new Vue({
+				el: "#app",
+				data: {
+
+				},
+				methods: {
+
+				}
+
+			})
+		</script>
+	</body>
+</html>

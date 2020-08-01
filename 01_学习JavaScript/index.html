@@ -1,0 +1,73 @@
+<!--
+ * @Author: 夏2同学
+ * @Date: 2020-07-15 22:06:32
+ * @LastEditTime: 2020-07-18 13:17:27
+ * @LastEditors: 夏2同学
+ * @FilePath: \学习JavaScript\index.html
+ * @Description: 
+-->
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script>
+		</script>
+	</head>
+	<body>
+		<div>
+			选择文件(可多选):
+			<input type="file" id="f1" multiple /><br /><br />
+			<button type="button" id="btn-submit">上 传</button>
+		</div>
+		<script>
+			function submitUpload() {
+				//获得文件列表，注意这里不是数组，而是对象
+				var fileList = document.getElementById('f1').files;
+				if (!fileList.length) {
+					alert('请选择文件');
+					return;
+				}
+				var file = new FormData(); //构造FormData对象
+				// file.append('title', document.getElementById('title').value);
+
+				//多文件上传需要遍历添加到 fromdata 对象
+				for (var i = 0; i < fileList.length; i++) {
+					file.append('file', fileList[i]); //支持多文件上传
+				}
+
+				
+				for (var value of file.values()) {
+					console.log(value);
+				}
+
+				var xhr = new XMLHttpRequest(); //创建对象
+
+				xhr.open("POST", "https://dcdn-jiazheng.21cs.cn/file/upload");
+				// xhr.setRequestHeader("Content-Type", "multipart/form-data");
+				xhr.setRequestHeader("Authorization",
+					"Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMjM0NTY3OCIsImlzcyI6ImVjaGlzYW4iLCJleHAiOjE1OTU1MDU2OTcsImlhdCI6MTU5NDkwMDg5Nywicm9sIjoidHlwZTpsaXN0LHR5cGU6Y3JlYXRlLHR5cGU6bW9kaWZ5LHR5cGU6ZGVsZXRlLG9yZGVyOmxpc3Qsb3JkZXI6bW9kaWZ5LG9yZGVyOmRlbGV0ZSxvcmRlcjpyZWZ1bmQsY291cG9uOmxpc3QsY291cG9uOmNyZWF0ZSxjb3Vwb246bW9kaWZ5LGNvdXBvbjpkZWxldGUsc2Vja2lsbDpsaXN0LHNlY2tpbGw6Y3JlYXRlLHNlY2tpbGw6bW9kaWZ5LHNlY2tpbGw6ZGVsZXRlLGhvbWU6bGlzdCxob21lOmNyZWF0ZSxob21lOm1vZGlmeSxob21lOmRlbGV0ZSxhZG1pbjpsaXN0LGFkbWluOmNyZWF0ZSxhZG1pbjptb2RpZnksYWRtaW46ZGVsZXRlLGNvbXBhbnk6bGlzdCxjb21wYW55Om1vZGlmeSxjb21wYW55OmRlbGV0ZSxjb21wYW55OmNyZWF0ZSxjdXN0b21lcjpsaXN0LGN1c3RvbWVyOm1vZGlmeSxhZG1pbiJ9.O83ImeeaMA3tdHcN0dDnCGpnM4mgzpBUtnWFAqaA13Phei1KV2SuYE7TBPeAtITP5TEVrLTfbx7oEYE95SwTyQ"
+				);
+
+				xhr.send(file); //发送时  Content-Type默认就是: multipart/form-data; 
+				
+				xhr.onreadystatechange = function() {
+					console.log('state change', xhr.readyState);
+					if (this.readyState == 4 && this.status == 200) {
+						var obj = JSON.parse(xhr.responseText); //返回值
+						console.log(obj);
+						if (obj.data) {
+							alert('上传成功');
+						}
+					}
+				}
+
+			}
+
+			//绑定提交事件
+			document.getElementById('btn-submit').addEventListener('click', submitUpload);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Vue学习</title>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/**
+			 * 时间：2020年7月8日21:41:47
+			 * 名称：
+			 * 内容： v-on 绑定事件
+			 * 
+			 * new Vue 一个新的属性 methods 绑定事件对应函数
+			 * 事件 ： dblclick , click
+			 * 		
+			 */
+		</script>
+	</head>
+	<body>
+		<div id="app">
+			<input type="button" v-on:click="doIt" value="按钮1"/>
+			<input type="button" @click="doIt" value="按钮2"/>
+			<input type="button"  value="按钮3" @dblclick="changeIt"/>
+			<span >
+				{{ message }}
+			</span>
+		</div>
+		
+		<script type="text/javascript">
+			var app = new Vue({
+				el:"#app",
+				data:{
+					message:"番茄炒蛋"
+				},
+				methods:{
+					doIt:function(){
+						alert("点我干嘛！")
+					},
+					changeIt:function(){
+						this.message += ",真好吃！"
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

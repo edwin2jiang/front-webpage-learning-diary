@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Vue学习</title>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/**
+			 * 时间：2020年7月30日09:33:03
+			 * 名称：
+			 * 内容：
+			 * 		.number 它会将值尝试用parseFloat进行转化
+			 * 		.trim 去除首尾空格
+			 */
+		</script>
+	</head>
+	<body>
+		<div id="app">
+			<input type="text" v-model.number="text">
+			
+			<button type="button" @click="log">点我</button>
+			
+			<div> {{ text }} </div>
+		</div>
+
+		<script type="text/javascript">
+			var app = new Vue({
+				el: "#app",
+				data: {
+					text:""
+
+				},
+				methods: {
+					log:function(){
+						console.log(typeof this.text);
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Vue学习</title>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/**
+			 * 时间：2020年7月20日14:17:37
+			 * 名称：
+			 * 内容：计算属性 和 监控器
+			 * 		
+			 * 	计算属性 computed 
+			 * 			- 只有当它依赖的属性值发生改变的时候，才会重新计算，
+			 * 			- 当多次访问计算属性的时候，只要计算依赖的属性值没有发生改变，就不会变
+			 * 	监控器 watch 监控的属性值发生改变时，就会运行
+			 * 			可以传递参数 （newValue,oldValue）
+			 */
+		</script>
+	</head>
+	<body>
+		<div id="app">
+			<div id="example">
+				<p>Original message: "{{ message }}"</p>
+				<p>Computed reversed message: "{{ reversedMessage }}"</p>
+				<button type="button" @click="changeMes()">点我</button>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			var app = new Vue({
+				el: "#app",
+				data: {
+					message: 'Hello'
+				},
+				computed: {
+					// 计算属性的 getter
+					reversedMessage: function() {
+						// `this` 指向 vm 实例
+						return this.message.split('').reverse().join('')
+					},
+					
+				},
+				methods:{
+					changeMes:function(){
+						this.message = "test";
+					}
+				},
+				watch:{
+					// message:function(){
+					// 	alert("你变了");
+					// },
+					// reversedMessage:function(){
+					// 	alert("你也变了");
+					// }
+					message:function(oldValue,newValue){
+						console.log(oldValue+":"+newValue);
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

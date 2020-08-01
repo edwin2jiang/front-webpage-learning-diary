@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/* 六级标题 用于表示警告*/
+			#nice h6:before {
+				content: "!";
+				background-color: #f66;
+				position: absolute;
+				top: 14px;
+				left: -12px;
+				color: #fff;
+				width: 20px;
+				height: 20px;
+				border-radius: 100%;
+				text-align: center;
+				line-height: 20px;
+				font-weight: bold;
+				font-family: "Dosis", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+				font-size: 14px;
+			}
+
+
+			/* 六级标题内容 */
+			#nice h6 .content {
+				color: darkorange;
+				font-size: 16px;
+			}
+
+			#nice h6 {
+				border-left-color: #f66;
+				padding: 12px 24px 16px 30px;
+				margin: 2em 0;
+				border-left-width: 4px;
+				border-left-style: solid;
+				background-color: #f8f8f8;
+				position: relative;
+				border-bottom-right-radius: 2px;
+				border-top-right-radius: 2px;
+			}
+
+			/* 六级标题修饰 请参考有实例的主题 */
+			#nice h6:after {}
+		</style>
+	</head>
+	<body>
+		<div id="nice">
+			<h6>
+				<!-- 这是一段提示这是一段提示这是一段提示这是一段提示这是一段提示这是一段提示这是一段提示这是一段提示这是一段提示这是一段提示这是一段提示这是一段提示这是一段提示这是一段提示 -->
+				这是一段提示
+			</h6>
+		</div>
+
+	</body>
+</html>

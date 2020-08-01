@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			"use strict";
+			// var a = function(){
+			//     var text = "func";
+			//     function b(){
+			//         console.log(text); 
+			//     };
+			//     b();
+			// }
+			// a(); // 输出 func
+			// console.log(a.text); // 输出 undefined
+
+			// var num = Number.parseInt(3.14) 
+			// console.log(num); // 3
+
+
+			var arr1 = [3, 2, 1];
+			console.log(arr1.sort()); // 输出 [1,2,3]
+			var arr2 = [4, 8, 15, 23];
+			console.log(arr2.sort()); // 输出 [15, 23, 4, 8] ？？？
+			/**
+			 * 也许聪明的你，已经看出规律了，
+			 * arr.sort() 它只排序了比对了数据第一位。
+			 * arr2,它将8和15做比较大小的时候，是将8和1比较的，
+			 * 所以，15才会在8前面。
+			 */
+
+			//arr.sort(comparefn) 可以通过接受一个compare参数来进行更加精准排序
+			arr2.sort(function(a, b) {
+				return a - b;
+			});
+			console.log(arr2); // [4, 8, 15, 23] 此时结果正确了
+			// 你的比较函数应该接受两个参数，并且如果两个参数相等则返回0
+			// 如果两个参数不等，且第一个参数排在前面，则返回一个负数
+			// 如果两个参数不等，且第二个参数排在前面，则返回一个正数
+
+
+			console.log(NaN === NaN);
+
+			console.log(Number.isInteger(3)); //true
+			console.log(Number.isInteger(3.14)); //false
+			console.log(Number.isInteger(undefined)); //false
+
+
+			// 1. 
+			var num = 3.14;
+			console.log(num.toString(), typeof num, typeof num.toString());
+			// 输出 3.14 number string
+			// 2.
+			console.log(Number.parseInt(num)); //3
+			console.log(Number.parseInt("3.14")); //3 
+			// 3.
+			console.log(Number.parseFloat("3.14"), typeof Number.parseFloat("3.14"));
+			// 输出 3.14 "number"
+
+			var obj = {
+				name: "tom",
+				age: 18
+			}
+			console.log(obj.hasOwnProperty("name")); // true
+			console.log(obj.hasOwnProperty("weigth")); // false
+
+			var obj = {
+				name: "tom",
+				age: 18
+			}
+			console.log(Object.keys(obj)); //["name", "age"]
+			console.log(Object.values(obj)); // ["tom", 18]
+			
+			
+			
+			var obj = {
+				name: "tom",
+				age: 18
+			}
+			
+			console.log(JSON.stringify(obj),typeof JSON.stringify(obj));
+			// {"name":"tom","age":18}  数据类型：string
+			
+			var str = '{"name":"tom","age":18}';
+			console.log(JSON.parse(str),typeof JSON.parse(str));
+			// {name: "tom", age: 18}  数据类型 object
+		</script>
+	</body>
+</html>

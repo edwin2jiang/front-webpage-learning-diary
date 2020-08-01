@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Vue学习</title>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/**
+			 * 时间：2020年7月8日22:01:00
+			 * 名称：加法计数器
+			 * 内容：
+			 * v-text 设置元素的文本值，可以简写为 {{ message }}
+			 * @元素 等效于 v-on:click="methodName"
+			 * 	可以通过this 关键字获取data中的数值
+			 */
+		</script>
+		<style type="text/css">
+			#app{
+				width: 100px;
+				margin: 100px auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<button type="button" @click="sub"> - </button>
+			<span> {{ num }} </span>
+			<button type="button" @click="add"> + </button>
+		</div>
+		
+		<script type="text/javascript">
+			var app = new Vue({
+				el:"#app",
+				data:{
+					num:1
+				},
+				methods:{
+					sub:function(){
+						if (this.num > 0){
+							this.num--;
+						}else{
+							alert("别点了");
+						}
+					},
+					add:function(){
+						if (this.num < 10){
+							this.num++;
+						}else{
+							alert("别点了");
+						}
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

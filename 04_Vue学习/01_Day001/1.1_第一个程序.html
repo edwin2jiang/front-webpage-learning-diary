@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>7.8第一个Vue程序</title>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/**
+			 * 时间：2020年7月8日21:01:02
+			 * 第一个Vue程序
+			 */
+		</script>
+	</head>
+	<body>
+		<div id="app">
+			{{message}}
+			<span>
+				{{obj.name}}
+			</span>
+			<span>
+				{{obj.tele}}
+			</span>
+			<ul>
+				<li>{{array[0]}}</li>
+				<li>{{array[1]}}</li>
+				
+			</ul>
+		</div>
+		<script type="text/javascript">
+			var app = new Vue({
+				el:"#app",
+				data:{
+					message:"hello world!",
+					obj:{
+						name:"jww",
+						tele:"123456"
+					},
+					array:["元素1","元素2"]
+				}
+			})
+		</script>
+	</body>
+</html>

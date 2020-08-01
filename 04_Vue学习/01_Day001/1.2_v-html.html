@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Vue学习</title>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/**
+			 * 时间：2020年7月8日21:32:55
+			 * 名称：v-html,v-text的学习
+			 * 内容：v-html主要用于渲染html元素
+			 * 		v-text主要用于渲染文本
+			 */
+		</script>
+	</head>
+	<body>
+		<div id="app">
+			<span v-html="content"></span>
+			<span v-text="content"></span>
+		</div>
+		
+		<script type="text/javascript">
+			var app = new Vue({
+				el:"#app",
+				data:{
+					content:"<a href='http://baidu.com'>百度</a>"
+				}
+			})
+		</script>
+	</body>
+</html>

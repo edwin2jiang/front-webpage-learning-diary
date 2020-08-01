@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Vue学习</title>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/**
+			 * 时间：2020年7月27日21:25:53
+			 * 名称：
+			 * 内容：
+			 *        在将 v-bind 用于 class 和 style 时，Vue.js 做了专门的增强。
+			 *        表达式结果的类型除了字符串之外，还可以是对象或数组。
+			 * 		
+			 */
+		</script>
+	</head>
+	<body>
+		<div id="app">
+			<!-- 对象表示法 -->
+			<div v-bind:class="{active:isActive}">文本1</div>
+			<!-- 可以有多个值,如果有中线，得用字符串的形式 -->
+			<div v-bind:class="{active:isActive,'text-danger':'is-Text'}">文本2</div>
+			<!-- 可以直接传对象 -->
+			<div :class="obj">文本3</div>
+			<!-- 直接通过对象 -->
+			<div :style="{ color: activeColor, fontSize: fontSize + 'px' }">
+				文本四
+			</div>
+			<!-- 通过css -->
+			<div :style="styleColor">
+				文本5
+			</div>
+			<!-- 通过数组同时绑定多重样式 -->
+			<div :style="[styleColor,color]">
+				文本6
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			var app = new Vue({
+				el:"#app",
+				data:{
+					isActive:false,
+					'is-Text':true,
+					obj:{
+						isActive:true,
+						'is-Text':true
+					},
+					activeColor:"#bbbbbb",
+					fontSize:18,
+					styleColor:{
+						color:"red",
+						fontSize:"20px"
+					},
+					color:{
+						color:"orange"
+					}
+				},
+				methods:{
+				
+				}
+			})
+		</script>
+	</body>
+</html>

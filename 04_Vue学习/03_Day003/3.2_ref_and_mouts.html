@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Vue学习</title>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/**
+			 * 时间：2020年7月20日15:42:04
+			 * 名称：
+			 * 内容：
+			 * 		可以通过ref获取被绑定元素，等效于 id
+			 * 		使用方法 this.$refs.refName
+			 * 	
+			 */
+		</script>
+	</head>
+	<body>
+		<div id="app">
+			<div ref="name" @click="changeDivfn()">
+				初始
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			var app = new Vue({
+				el: "#app",
+				data: {
+					message: 'Hello'
+				},
+				methods:{
+					changeDivfn:function(){
+						this.$refs.name.innerHTML = "尝试"
+					}
+				},
+			})
+		</script>
+	</body>
+</html>

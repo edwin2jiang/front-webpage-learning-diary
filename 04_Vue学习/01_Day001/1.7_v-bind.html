@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Vue学习</title>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/**
+			 * 时间：2020年7月8日23:12:27
+			 * 名称：
+			 * 内容：v-bind
+			 * 
+			 * v-bind 用于操作 元素的 属性
+			 * v-bind:属性名="data里面的属性" //必须和data里面的属性一一对应
+			 * v-bind:属性名 可以简写为 :bind
+			 * v-bind:class 可以用一个表达式判定这个类是否添加 有两种写法
+			 * 		- 三元运算法 v-bind:class="isActive?'test':''"
+			 * 		- v-bind:class="{test:isActive}" :class="{类名:表达式}"
+			 * 		
+			 */
+		</script>
+		<style>
+			.test{
+				border: 1px red solid;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<button type="button" @click="func">点我</button>
+			<img v-bind:src="imgUrl" v-bind:title="{imgTitle+:true}">
+			<img v-bind:src="imgUrl" v-bind:title="imgTitle+'!!!'" v-bind:class="isActive?'test':''">
+			<img v-bind:src="imgUrl" v-bind:title="imgTitle+'!!!'" :class="{test:isActive}">
+		</div>
+		
+		<script type="text/javascript">
+			var app = new Vue({
+				el:"#app",
+				data:{
+					imgUrl:"../img/日出.ico",
+					imgTitle:"日出",
+					isActive:false
+				},
+				methods:{
+					func:function(){
+						this.isActive = !this.isActive;
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

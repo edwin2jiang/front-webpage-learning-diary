@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Vue学习</title>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/**
+			 * 时间：
+			 * 名称：
+			 * 内容：
+			 * 		
+			 */
+		</script>
+	</head>
+	<body>
+		<div id="app">
+			<button v-on:click="warn('Form cannot be submitted yet.', $event)">
+				Submit
+			</button>
+		</div>
+
+		<script type="text/javascript">
+			var app = new Vue({
+				el: "#app",
+				data: {
+
+				},
+				methods: {
+					warn: function(message, event) {
+						// 现在我们可以访问原生事件对象
+						if (event) {
+							event.preventDefault()
+						}
+						console.log(typeof event);
+						alert(message)
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

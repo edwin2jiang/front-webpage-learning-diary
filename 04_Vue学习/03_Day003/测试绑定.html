@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Vue学习</title>
+		<script src="../js/new_file.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/**
+			 * 时间：2020年7月20日15:42:04
+			 * 名称：
+			 * 内容：
+			 * 		测试结果，当绑定多个鼠标事件的时候，他会忽略第二个
+			 * 	
+			 */
+		</script>
+	</head>
+	<body>
+		<div id="app">
+			<div ref="name" @click="do1();" >
+				初始
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			var app = new Vue({
+				el: "#app",
+				data: {
+					message: 'Hello'
+				},
+				methods:{
+					do1:function(){
+						alert("1")
+					},
+					do2:function(){
+						alert("2")
+					}
+				},
+			})
+		</script>
+	</body>
+</html>

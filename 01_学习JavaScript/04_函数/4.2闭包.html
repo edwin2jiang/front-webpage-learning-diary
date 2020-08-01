@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!-- 
+			- @time: 2020年7月22日16:44:31
+			- @content: 
+					em是相对长度单位
+					相对的是父级元素的px值
+					如果父级元素 为16px
+					那么 1em = 16px
+					body的默认font-size 的数值是 16px
+		 -->
+		<style type="text/css">
+			body {
+				font-family: Helvetica, Arial, sans-serif;
+				font-size: 12px;
+			}
+
+			h1 {
+				font-size: 1.5em;
+			}
+
+			h2 {
+				font-size: 1.2em;
+			}
+			
+			#app{
+				font-size: 16px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<a href="#" id="size-12">12</a>
+			<a href="#" id="size-14">14</a>
+			<a href="#" id="size-16">16</a>
+		</div>
+
+		<script type="text/javascript">
+			function makeSizer(size) {
+				return function() {
+					document.getElementById("app").style.fontSize = size + 'px';
+				};
+			}
+
+			var size12 = makeSizer(12);
+			var size14 = makeSizer(14);
+			var size16 = makeSizer(16);
+
+			document.getElementById('size-12').onclick = size12;
+			document.getElementById('size-14').onclick = size14;
+			document.getElementById('size-16').onclick = size16;
+		</script>
+	</body>
+</html>

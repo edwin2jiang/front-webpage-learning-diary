@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Vue学习</title>
+		<script src="./../js/vue.js" type="text/javascript" charset="utf-8"></script>
+		 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script type="text/javascript">
+			/**
+			 * 时间：2020年7月9日18:24:23
+			 * 名称：
+			 * 内容：
+			 * 		
+			 */
+		</script>
+	</head>
+	<body>
+		<div id="app">
+			<button type="button" @click="getJok">点我</button>
+			<p> {{ jok }} </p>
+		</div>
+
+		<script type="text/javascript">
+			var app = new Vue({
+				el: "#app",
+				data: {
+					jok:"笑话"
+				},
+				methods: {
+					getJok: function() {
+						var that = this;
+						axios.get("https://autumnfish.cn/api/joke/list?num=1")
+							.then(function(response) {
+								console.log(response);
+								var obj = response.data.jokes
+								that.jok =  obj[0];
+							}, function(err) {
+								console.log(err);
+							})
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

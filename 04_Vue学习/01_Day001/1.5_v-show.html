@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Vue学习</title>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/**
+			 * 时间：2020年7月8日22:18:57
+			 * 名称：
+			 * 内容：v-show 属性
+			 *      v-show(表达式) 这个表达式一定是要能判定是true还是false的
+			 * 		
+			 */
+		</script>
+	</head>
+	<body>
+		<div id="app">
+			<button type="button" @click="changeDisplay">改变显示</button>
+			<img src="../img/萌1.jpg" v-show="isShow" > 
+			
+			<button type="button" @click="addAge">增加年龄</button>
+			<img src="../img/萌1.jpg" v-show="age>=18">
+		</div>
+		
+		<script type="text/javascript">
+			var app = new Vue({
+				el:"#app",
+				data:{
+					isShow:false,
+					age:17
+				},
+				methods:{
+					changeDisplay:function(){
+						this.isShow = !this.isShow;
+					},
+					addAge:function(){
+						this.age ++;
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

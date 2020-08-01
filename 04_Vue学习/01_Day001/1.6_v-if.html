@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Vue学习</title>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/**
+			 * 时间：2020年7月8日22:32:23
+			 * 名称：
+			 * 内容：
+			 * 		v-if 和 v-show 在效果上都是让元素 显示和消失
+			 * 		但是原理上不同，v-if 是从dom中直接取出掉该元素
+			 * 		而v-show 是添加了一个css样式 display来产生的改变
+			 * 		两者相比：v-show 更适合于频繁的操作元素显示或者隐藏
+			 * 				v-if 由于需要操作dom，相对开销较大
+			 * 犯的错误：	
+			 * 	// data:{
+				// 	isShow = false   //属性用了 = ，应该用:
+				// },
+			 */
+		</script>
+	</head>
+	<body>
+		<div id="app">
+			<button type="button" @click="changeIsShow1">改变1</button>
+			<img src="../img/萌1.jpg" v-if="isShow">
+
+			<button type="button" @click="changeIsShow2">改变2</button>
+			<img src="../img/萌1.jpg" v-show="isShow">
+		</div>
+
+		<script type="text/javascript">
+			var app = new Vue({
+				el: "#app",
+				// data:{
+				// 	isShow = false
+				// },
+				data: {
+					isShow: false,
+					age: 17
+				},
+				methods: {
+					changeIsShow1: function() {
+						this.isShow = !this.isShow;
+					},
+
+					changeIsShow2: function() {
+						this.isShow = !this.isShow;
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
