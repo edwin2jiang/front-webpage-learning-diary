@@ -1,0 +1,53 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>赶快回家网</title><link rel="stylesheet" href="css/ex05.css"></head><script type="text/javascript">function hover() {
+			var obj = document.querySelector("#chose");
+			obj.style["display"] = "block";
+			var a = document.querySelector("#geren");
+			a.style["width"] = "90px";
+			a.style["height"] = "24px";
+			a.style["background-color"] = "white";
+		}
+
+		function back() {
+			var obj = document.querySelector("#chose");
+			obj.style["display"] = "none";
+			var a = document.querySelector("#geren");
+			a.style["background-color"] = "#eeeeee";
+		}</script><body><header><nav id="nav"><a href="#"><span>登录</span></a> <a href="#"><span>免费注册</span></a><div id="header_right"><ul><li onmouseover="hover();" onmouseleave="back();"><a href="#" id="geren" style="display: inline-block;">个人中心&nbsp;&nbsp;&nbsp;|</a><ul id="chose"><li><a href="#">已完成订单</a></li><li><a href="#">未完成订单</a></li><li><a href="#">我的保险</a></li><li><a href="#">账户安全</a></li><li><a href="#">个人信息</a></li><li><a href="#">常用联系人</a></li></ul></li></ul><ul><li id="li2"><a href="#">使用须知&nbsp;&nbsp;&nbsp;|</a></li><li id="li3"><a href="#">收藏夹&nbsp;&nbsp;&nbsp;|</a></li><li id="li4"><a href="#">货物快运&nbsp;&nbsp;&nbsp;|</a></li><li id="li5"><a href="#">联系我们</a></li></ul></div></nav></header><div class="fenge"></div><div class="content"><div class="content_header"><span id="con_himg"><img src="images/logo.jpg" alt=""></span><span class="content_header_write"><span>汽车票</span> <span>时刻表</span> <span>汽车站</span> <span>酒店预订</span> <span>旅客问答</span></span></div><div class="after"><img src="images/banner.jpg" alt=""><div class="content_table"><table border="2px" cellspacing="0" cellpadding="" bordercolor="orange" id="table1" bgcolor="fff8f2"><tr><td><span class="span1">01月27日</span><br><span id="span2">周三</span></td><td><span class="span1">01月28日</span><br><span id="span2">周四</span></td><td><span class="span1">01月29日</span><br><span id="span2">周五</span></td><td><span class="span1">01月30日</span><br><span id="span2">周六</span></td><td><span class="span1">01月31日</span><br><span id="span2">周日</span></td><td><span class="span1">02月01日</span><br><span id="span2">周一</span></td><td><span class="span1">02月02日</span><br><span id="span2">周二</span></td></tr></table></div></div><div class="buy"><div class="buy_header"><span class="td11">出发时间</span> <span class="td22">始发站/首发站</span> <span class="td33">计划车型</span> <span class="td44">票价</span> <span class="td55">购票</span></div><div class="buy_one"><span class="td1">06:30</span> <span class="td2"><span style="width: 18px; height: 18px; background-color: #FF7000;color: white; display: inline-block;">始</span> 省汽车客运站<br><span style="width: 18px; height: 18px; background-color: #0066ff;color: white; display: inline-block;">终</span> 阳江 </span><span class="td3">空调坐席</span> <span class="td4">￥ <span style="font-size:30px;color: #FF7000;padding: 0px; margin: 0px;">100</span></span> <span class="td5" style="color: white;">购票</span> <span id="bg1" style="" class="out" onmouseover="change1()" onmouseleave="recover1()"></span></div><div class="buy_two"><span class="td1">07:30</span> <span class="td2"><span style="width: 18px; height: 18px; background-color: #FF7000;color: white; display: inline-block;">始</span> 省汽车客运站<br><span style="width: 18px; height: 18px; background-color: #0066ff;color: white; display: inline-block;">终</span> 阳江 </span><span class="td3">空调坐席</span> <span class="td4">￥ <span style="font-size:30px;color: #FF7000;padding: 0px; margin: 0px;">100</span></span> <span class="td5" style="color: white;">购票</span> <span id="bg2" style="" class="out" onmouseover="change2()" onmouseleave="recover2()"></span></div><div class="buy_there"><span class="td1">08:30</span> <span class="td2"><span style="width: 18px; height: 18px; background-color: #FF7000;color: white; display: inline-block;">始</span> 省汽车客运站<br><span style="width: 18px; height: 18px; background-color: #0066ff;color: white; display: inline-block;">终</span> 阳江 </span><span class="td3">空调坐席</span> <span class="td4">￥ <span style="font-size:30px;color: #FF7000;padding: 0px; margin: 0px;">100</span></span> <span class="td5" style="color: white;">购票</span> <span id="bg3" style="" class="out" onmouseover="change3()" onmouseleave="recover3()"></span></div><div class="buy_four"><span class="td1">09:30</span> <span class="td2"><span style="width: 18px; height: 18px; background-color: #FF7000;color: white; display: inline-block;">始</span> 省汽车客运站<br><span style="width: 18px; height: 18px; background-color: #0066ff;color: white; display: inline-block;">终</span> 阳江 </span><span class="td3">空调坐席</span> <span class="td4">￥ <span style="font-size:30px;color: #FF7000;padding: 0px; margin: 0px;">100</span></span> <span class="td5" style="color: white;">购票</span> <span id="bg4" style="" class="out" onmouseover="change4()" onmouseleave="recover4()"></span></div></div></div><footer><div class="bgpic"></div><div class="write">赶快回家版权所有2000-2016京ICP备08001421号&nbsp;&nbsp;京公网安备110108007702</div></footer></body><script type="text/javascript">function change1() {
+			var a = document.getElementById("bg1");
+			a.style["background-color"] = "#dd8c47";
+		}
+
+		function recover1() {
+			var a = document.getElementById("bg1");
+			a.style["background-color"] = "#FF7000";
+		}
+
+		function change2() {
+			var a = document.getElementById("bg2");
+			a.style["background-color"] = "#dd8c47";
+		}
+
+		function recover2() {
+			var a = document.getElementById("bg2");
+			a.style["background-color"] = "#FF7000";
+		}
+
+		function change3() {
+			var a = document.getElementById("bg3");
+			a.style["background-color"] = "#dd8c47";
+		}
+
+		function recover3() {
+			var a = document.getElementById("bg3");
+			a.style["background-color"] = "#FF7000";
+		}
+
+		function change4() {
+			var a = document.getElementById("bg4");
+			a.style["background-color"] = "#dd8c47";
+		}
+
+		function recover4() {
+			var a = document.getElementById("bg4");
+			a.style["background-color"] = "#FF7000";
+		}</script></html>
