@@ -1,0 +1,16 @@
+<!--
+ * @Author: 夏2同学
+ * @Date: 2020-08-08 07:56:35
+ * @LastEditTime: 2020-08-08 07:59:27
+ * @LastEditors: 夏2同学
+ * @FilePath: \03_Node.js学习\Day006\framework\views\local.art
+ * @Description: 
+--> 
+
+
+{{each users}}
+<ul>
+    <li>{{$value.name}}</li>
+    <li>{{$value.age}}</li>
+</ul>  
+{{/each}}

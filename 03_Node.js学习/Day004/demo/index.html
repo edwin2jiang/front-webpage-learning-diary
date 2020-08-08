@@ -1,0 +1,36 @@
+<!--
+ * @Author: 夏2同学
+ * @Date: 2020-08-06 23:00:39
+ * @LastEditTime: 2020-08-06 23:03:08
+ * @LastEditors: 夏2同学
+ * @FilePath: \03_Node.js学习\Day004\demo\index.html
+ * @Description: 
+--> 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+    <script>
+        
+        $.ajax({
+            "url":"http://localhost:3000/getData",
+            "method": "GET",
+            "headers": {
+                "Content-Type":"application/x-www-form-urlencoded",
+            },
+            "crossDomain": true
+        })
+            .done(function(response){
+				console.log(response);
+			})
+            .fail(function(jqXHR){})
+
+    </script>
+</body>
+</html>
